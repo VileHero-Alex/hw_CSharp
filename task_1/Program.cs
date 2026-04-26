@@ -15,7 +15,11 @@ namespace Calculator {
                     break;
                 }
 
-                double num1 = Convert.ToDouble(input1);
+                if (!double.TryParse(input1, out double num1)) {
+                    Console.WriteLine("Ошибка: введите корректное число!");
+                    Console.WriteLine();
+                    continue;
+                }
 
                 Console.Write("Введите второе число: ");
                 string input2 = Console.ReadLine();
@@ -25,7 +29,11 @@ namespace Calculator {
                     break;
                 }
 
-                double num2 = Convert.ToDouble(input2);
+                if (!double.TryParse(input2, out double num2)) {
+                    Console.WriteLine("Ошибка: введите корректное число!");
+                    Console.WriteLine();
+                    continue;
+                }
 
                 Console.Write("Введите операцию (+, -, *, /): ");
                 string operation = Console.ReadLine();
